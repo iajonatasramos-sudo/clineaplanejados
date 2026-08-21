@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+._*
+
+# Logs / temporários
+*.log
+Thumbs.db

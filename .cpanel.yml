@@ -1,0 +1,13 @@
+---
+deployment:
+  tasks:
+    # ============================================================
+    # >>> TROQUE "USUARIO" pelo seu usuário do cPanel <<<
+    #
+    # Domínio PRINCIPAL da conta  -> /home/USUARIO/public_html/
+    # Domínio ADICIONAL (addon)   -> /home/USUARIO/clineaplanejados.com.br/
+    #   (confira o "Document Root" em cPanel > Domínios)
+    # ============================================================
+    - export DEPLOYPATH=/home/USUARIO/public_html/
+    - /bin/mkdir -p "$DEPLOYPATH"
+    - /bin/cp -R ./* "$DEPLOYPATH"
