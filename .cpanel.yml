@@ -2,12 +2,16 @@
 deployment:
   tasks:
     # ============================================================
-    # >>> TROQUE "USUARIO" pelo seu usuário do cPanel <<<
+    # Conta cPanel: elitedoc
+    # Deploy do domínio ADICIONAL clineaplanejados.com.br
     #
-    # Domínio PRINCIPAL da conta  -> /home/USUARIO/public_html/
-    # Domínio ADICIONAL (addon)   -> /home/USUARIO/clineaplanejados.com.br/
-    #   (confira o "Document Root" em cPanel > Domínios)
+    # Caminho abaixo = suposição segura (pasta dedicada do domínio).
+    # Confirme o "Document Root" em cPanel > Domínios e ajuste se preciso.
+    # Possíveis valores:
+    #   /home/elitedoc/clineaplanejados.com.br/              (usado aqui)
+    #   /home/elitedoc/public_html/clineaplanejados.com.br/  (addon dentro do public_html)
+    #   /home/elitedoc/public_html/                          (só se for o domínio principal)
     # ============================================================
-    - export DEPLOYPATH=/home/USUARIO/public_html/
+    - export DEPLOYPATH=/home/elitedoc/clineaplanejados.com.br/
     - /bin/mkdir -p "$DEPLOYPATH"
     - /bin/cp -R ./* "$DEPLOYPATH"
