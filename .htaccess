@@ -1,0 +1,23 @@
+# Clínea Planejados
+
+# Carrega o index.html em vez de listar os arquivos
+DirectoryIndex index.html
+
+# Não listar o conteúdo das pastas
+Options -Indexes
+
+# Compressão (quando disponível)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/plain application/xml
+</IfModule>
+
+# Cache de arquivos estáticos (quando disponível)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
