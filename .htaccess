@@ -1,5 +1,13 @@
 # Clínea Planejados
 
+# Força HTTPS (redireciona http -> https)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
 # Carrega o index.html em vez de listar os arquivos
 DirectoryIndex index.html
 
